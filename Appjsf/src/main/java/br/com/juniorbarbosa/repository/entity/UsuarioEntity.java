@@ -24,7 +24,7 @@ public class UsuarioEntity implements Serializable {
 	@Id
 	@GeneratedValue
 	@Column(name = "id_usuario")
-	private String codigo;
+	private int codigo;
 
 	@Column(name = "ds_login")
 	private String usuario;
@@ -35,9 +35,9 @@ public class UsuarioEntity implements Serializable {
 	/**
 	 * Obtém o código do usuário
 	 * 
-	 * @return um <code>String</code> especificando o código
+	 * @return um <code>integer</code> especificando o código
 	 */
-	public String getCodigo() {
+	public int getCodigo() {
 		return codigo;
 	}
 
@@ -47,7 +47,7 @@ public class UsuarioEntity implements Serializable {
 	 * @param codigo o código/id do usuário
 	 * 
 	 */
-	public void setCodigo(String codigo) {
+	public void setCodigo(int codigo) {
 		this.codigo = codigo;
 	}
 

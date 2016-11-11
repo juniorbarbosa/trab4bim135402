@@ -11,16 +11,16 @@ public class UsuarioModel implements Serializable {
 
 	private static final long serialVersionUID = -4283653903070617397L;
 
-	private String codigo;
+	private int codigo;
 	private String usuario;
 	private String senha;
 
 	/**
 	 * Obtém o código do usuário
 	 * 
-	 * @return um <code>String</code> especificando o código
+	 * @return um <code>integer</code> especificando o código
 	 */
-	public String getCodigo() {
+	public int getCodigo() {
 		return codigo;
 	}
 
@@ -30,7 +30,7 @@ public class UsuarioModel implements Serializable {
 	 * @param codigo o código/id do usuário
 	 * 
 	 */
-	public void setCodigo(String codigo) {
+	public void setCodigo(int codigo) {
 		this.codigo = codigo;
 	}
 
