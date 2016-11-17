@@ -31,7 +31,7 @@ public class PessoaEntity implements Serializable {
 	@Id
 	@GeneratedValue
 	@Column(name = "id_pessoa")
-	private int codigo;
+	private Integer codigo;
 
 	@Column(name = "nm_pessoa")
 	private String nome;
@@ -60,7 +60,7 @@ public class PessoaEntity implements Serializable {
 	 * 
 	 * @return um <code>Integer</code> especificando o código
 	 */
-	public int getCodigo() {
+	public Integer getCodigo() {
 		return codigo;
 	}
 
@@ -70,7 +70,7 @@ public class PessoaEntity implements Serializable {
 	 * @param codigo o código/id da pessoa
 	 * 
 	 */
-	public void setCodigo(int codigo) {
+	public void setCodigo(Integer codigo) {
 		this.codigo = codigo;
 	}
 

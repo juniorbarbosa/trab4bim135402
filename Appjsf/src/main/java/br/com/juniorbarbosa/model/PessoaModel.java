@@ -12,7 +12,7 @@ public class PessoaModel implements Serializable {
 
 	private static final long serialVersionUID = -7327523815264705819L;
 
-	private int codigo;
+	private Integer codigo;
 	private String nome;
 	private String sexo;
 	private LocalDateTime dataCadastro;
@@ -26,7 +26,7 @@ public class PessoaModel implements Serializable {
 	 * 
 	 * @return um <code>Integer</code> especificando o código
 	 */
-	public int getCodigo() {
+	public Integer getCodigo() {
 		return codigo;
 	}
 
@@ -36,7 +36,7 @@ public class PessoaModel implements Serializable {
 	 * @param codigo o código/id da pessoa
 	 * 
 	 */
-	public void setCodigo(int codigo) {
+	public void setCodigo(Integer codigo) {
 		this.codigo = codigo;
 	}
 
