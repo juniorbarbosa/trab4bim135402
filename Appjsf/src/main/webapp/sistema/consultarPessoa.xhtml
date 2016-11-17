@@ -7,6 +7,9 @@
  
 	<ui:composition template="/template/layoutBase.xhtml">
 		<ui:define name="content">
+			<p:dialog header="Editar cadastro de pessoa" id="dialog-modal-editar" widgetVar="dialog-modal-editar" modal="true" height="400px" width="550px">
+		   		 <ui:include src="/sistema/editarPessoa.xhtml"/>
+			</p:dialog>
 			<h:form style="margin:auto;margin-left:2%;" id="form-consulta">
 				<p:dataTable id="dataTable-registros" var="pessoa" value="#{consultarPessoaController.pessoas}" rows="15" paginator="true" paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}" rowsPerPageTemplate="5,10,15" style="width:98%;">
 					 <p:column headerText="Código">
@@ -43,8 +46,8 @@
            				<h:outputText value="#{pessoa.usuarioModel.usuario}" />
        				 </p:column>
 
-       				 <p:column headerText="" style="width:25px;">
-
+       				<p:column headerText="" style="width:25px;">
+       				       <p:commandButton icon="ui-icon-pencil" title="Editar Registro" ajax="true" actionListener="#{consultarPessoaController.editar(pessoa)}" oncomplete="PF('dialog-modal-editar').show();" update="dialog-modal-editar"/>
        				 </p:column>
 
        				 <p:column headerText="" style="width:25px;">

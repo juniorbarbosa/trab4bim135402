@@ -97,4 +97,30 @@ public class PessoaRepository implements Serializable {
 		return pessoasModel;
 	}
 
+	/***
+	 * Método responsável por consultar uma pessoa cadastrada pelo código
+	 * @param codigo da pessoa
+	 * @return um <code>PessoaEntity</code> com o código da pessoa
+	 */
+	private PessoaEntity getPessoa(int codigo){
+		entityManager =  Uteis.jpaEntityManager();
+		return entityManager.find(PessoaEntity.class, codigo);
+	}
+ 
+	/***
+	 * Método responsável por alterar um registro cadastrado no banco de dados
+	 * @param pessoaModel a pessoa que vai ser alterada
+	 */
+	public void alterarRegistro(PessoaModel pessoaModel){
+		entityManager =  Uteis.jpaEntityManager();
+ 
+		PessoaEntity pessoaEntity = this.getPessoa(pessoaModel.getCodigo());
+		pessoaEntity.setEmail(pessoaModel.getEmail());
+		pessoaEntity.setEndereco(pessoaModel.getEndereco());
+		pessoaEntity.setNome(pessoaModel.getNome());
+		pessoaEntity.setSexo(pessoaModel.getSexo());
+
+		entityManager.merge(pessoaEntity);
+	}
+
 }
