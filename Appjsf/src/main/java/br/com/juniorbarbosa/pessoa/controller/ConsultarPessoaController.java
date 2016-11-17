@@ -93,5 +93,14 @@ public class ConsultarPessoaController implements Serializable {
 		this.pessoaRepository.alterarRegistro(this.pessoaModel);	
 		this.init();
 	}
+	
+	/***
+	 * Método que vai excluir uma pessoa do registro e atualizar o datatable
+	 * @param pessoaModel pessoa que vai ser excluida
+	 */
+	public void excluirPessoa(PessoaModel pessoaModel){
+		this.pessoaRepository.excluirRegistro(pessoaModel.getCodigo());
+		this.pessoas.remove(pessoaModel);
+	}
 
 }

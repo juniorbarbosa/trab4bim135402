@@ -122,5 +122,15 @@ public class PessoaRepository implements Serializable {
 
 		entityManager.merge(pessoaEntity);
 	}
+	
+	/***
+	 * Método responsável por excluir um registro do banco de dados
+	 * @param codigo da pessoa que vai ser excluida
+	 */
+	public void excluirRegistro(int codigo) {
+		entityManager =  Uteis.jpaEntityManager();		
+		PessoaEntity pessoaEntity = this.getPessoa(codigo);
+		entityManager.remove(pessoaEntity);
+	}
 
 }
